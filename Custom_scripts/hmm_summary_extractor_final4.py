@@ -113,8 +113,8 @@ def main(hmmer_dir, root_dir=None):
         hmm_subdir = os.path.join(output_seq_dir, hmm_name)
         os.makedirs(hmm_subdir, exist_ok=True)
 
-        out_faa = os.path.join(hmm_subdir, f"{hmm_name}_{accession}.faa")
-        out_ffn = os.path.join(hmm_subdir, f"{hmm_name}_{accession}.ffn")
+        out_faa = os.path.join(hmm_subdir, f"{hmm_name}_{accession}_{fragment_id}.faa")
+        out_ffn = os.path.join(hmm_subdir, f"{hmm_name}_{accession}_{fragment_id}.ffn")
 
         missing_faa = extract_seqs(hits, faa_file, out_faa)
         missing_ffn = extract_seqs(hits, ffn_file, out_ffn)
