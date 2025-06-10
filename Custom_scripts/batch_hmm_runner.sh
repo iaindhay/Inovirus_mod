@@ -40,7 +40,7 @@ for acc_dir in "$genome_root"/*; do
     for hmm_file in "$hmm_dir"/*.hmm; do
       [ -e "$hmm_file" ] || continue
       hmm_name=$(basename "$hmm_file" .hmm)
-      out_tbl="${hmmer_output_dir}/${acc}_${fragment_id}_${hmm_name}.tbl"
+      out_tbl="${hmmer_output_dir}/${acc}__${fragment_id}__${hmm_name}.tbl"
 
       echo "[+] hmmsearch: $hmm_name vs $faa_base"
       hmmsearch --tblout "$out_tbl" "$hmm_file" "$faa_file" > /dev/null
